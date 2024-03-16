@@ -1,0 +1,32 @@
+# x = str("Hello World")
+# print(type(x))
+# x = int(356562225548877111123456)
+# print(x)
+# print(type(x))
+# x = float(20.5)
+# print(type(x))
+# x = complex(1j)
+# print(type(x))
+# x = list(("apple", "banana", "cherry"))
+# print(type(x))
+# x = tuple(("apple", "banana", "cherry"))
+# print(type(x))
+# x = range(6)
+# print(type(x))
+# x = dict(name="John", age=36)
+# print(type(x))
+# x = set(("apple", "banana", "cherry"))
+# print(type(x))
+# x = frozenset(("apple", "banana", "cherry"))
+# print(type(x))
+# x = bool(5)
+# print(type(x))
+# a = 'name'
+# print(type(a))
+# a = '''name'''
+# print(type(a))
+# a = """name"""
+# print(type(a))
+# print(a.__doc__)
+
+

@@ -7,3 +7,6 @@ print('%.9f'%(123456789.123456789))
 
 name='naga'
 print(f'name is {name}')
+print(36%4)
+print(36//4)
+print(2*4)

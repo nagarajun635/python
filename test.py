@@ -1,5 +1,6 @@
 import sys
-
+from pendulum import date as pd
+from datetime import date as dt
 print(sys.version)
 
 name = 'raju'
@@ -15,3 +16,6 @@ print('%.6f'%i)
 
 print(36 % 4)
 print(36 // 4)
+
+print((dt(2025,1,1) - dt(2024,1,30)).days)
+print((pd(2050,1,30) - pd(2024,1,10)).days)

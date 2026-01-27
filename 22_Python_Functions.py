@@ -239,4 +239,35 @@ next(gen)
 gen.send('this is 1')
 gen.send('this is 2')
 gen.close()
-gen.send(12)
+# gen.send(12)
+
+class MyNumbers():
+    def __iter__(self):
+        self.a = 1
+        return self
+
+    def __next__(self):
+        if self.a<=20:
+            x = self.a
+            self.a += 1
+            return x
+        else:
+            raise StopIteration
+        
+mycls = MyNumbers()
+muiter = iter(mycls)
+print(next(muiter))
+print(next(muiter))
+print(next(muiter))
+
+import platform
+print(platform.python_version())
+print(platform.system())
+print(dir(platform))
+import datetime
+print(dir(datetime))
+import pendulum
+print(dir(pendulum))
+print(pendulum.yesterday())
+print(pendulum.now())
+print(pendulum.now('Asia/Kolkata'))

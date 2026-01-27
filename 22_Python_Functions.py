@@ -119,3 +119,124 @@ def myfunc(y):
 print(myfunc(x))
 print(x)
 
+# Python Decorators
+print('Python Decorators')
+
+def changecase(x):
+    def myinner(y):
+        return x(y).upper()
+    return myinner
+@changecase
+def myfunctio(x):
+    return x
+@changecase
+def myfunctio2(x):
+    return x
+print(myfunctio2('naga'))
+print(myfunctio('naga'))
+
+import functools
+def addit(func):
+    @functools.wraps(func)
+    def myinner(x):
+        return len(func(x)) + 5
+    return myinner
+def subit(func):
+    def myinner(x):
+        return func(x)-1
+    return myinner
+@subit
+@addit
+def myplan(x):
+    return 'Hello'
+print(myplan('hel'))
+
+# Python Lambda
+print('Python Lambda')
+
+x = lambda a: a*10
+print(x(10))
+
+def myfun(n,a):
+    return (lambda n,a : n * a)(a,n)
+print(myfun(n=5,a=5))
+
+numbers = [1,2,3,4,5,6,7,8,9]
+thribled = list(map(lambda x: x*3, numbers))
+print(thribled)
+odd_filter = list(filter(lambda x: x % 2 !=0, numbers))
+print(odd_filter)
+
+students = [("Emil", 25), ("Tobias", 22), ("Linus", 28)]
+sorted_students = sorted(students, key = lambda x: len(x[0]))
+print(sorted_students)
+
+# Python Recursion
+print('Python Recursion')
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+print(factorial(3))
+
+def countdown(n):
+    if n<0:
+        print('Done')
+    else:
+        print(n)
+        countdown(n-1)
+
+countdown(3)
+
+def val():
+    yield 1
+    yield 2
+    yield 3
+for value in val():
+    print(value)
+
+
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count+=1
+for i in count_up_to(1):
+    print(i)
+
+def large_seq(n):
+    for i in range(0,n):
+        yield i
+gen = large_seq(10000)
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+gen_exp = (x*x for x in range(8,10))
+print(next(gen_exp))
+gen_exp = sum(x*x for x in range(8,10))
+print(gen_exp)
+
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield b
+        a, b = b, a+b
+
+gen = fibonacci()
+for _ in range(10):
+    print(next(gen))
+
+
+def genetr():
+    while True:
+        x = yield
+        print(x)
+gen = genetr()
+next(gen)
+gen.send('this is 1')
+gen.send('this is 2')
+gen.close()
+gen.send(12)

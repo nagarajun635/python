@@ -32,13 +32,21 @@ def divide_hundred():
         print("Operation completed")
 divide_hundred()
 
-try:
-    f = open("test.txt",'r')
-    try:
-        f.writelines('Hello')
-    except:
-        print("While writing file error occured")
-    finally:
-        f.close()
-except:
-    print("Unable to open file")
+# x = -1
+# if x < 0:
+#     raise Exception("Numbers not less than 0")
+
+# x = 'hello'
+# print(x, type(x), not type(x), type(x) is str, not type(x) is int)
+# if not type(x) is int:
+#     raise TypeError("Invalid Type")
+# try:
+#     f = open("test.txt",'rt')
+#     try:
+#         f.write('Hello')
+#     except:
+#         print("While writing file, error occured")
+#     finally:
+#         f.close()
+# except:
+#     print("Unable to open file")
